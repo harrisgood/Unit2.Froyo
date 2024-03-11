@@ -16,29 +16,33 @@
 
 // ask user what flavors they want and store their answer
   // use default answer from assignment
-const promptFlavors = prompt(`What flavors would you like?`, `vanilla,vanilla,vanilla,strawberry,coffee,coffee`)
+const promptFlavors = prompt(`What froyo flavors would you like?`, `vanilla,vanilla,vanilla,strawberry,coffee,coffee`)
 
 // create array of flavors without comments
 const splitFlavors = promptFlavors.split(`,`)
 
-// create empty object to fill with user's input flavors from prompt
-const tableFlavors = {}
 
-// loop through all of split flavors
-for(let i = 0; i < splitFlavors.length; i++){
+// function that will turn our split string into a an object counting frequencies
+const countFlavors = (array) => {
+  // create empty object to fill with user's input flavors from prompt
+  const objFlavors = {}
 
-  // check if we have a key for this flavor
-  if(!tableFlavors[splitFlavors[i]]){
+  // loop through all of split flavors
+  for(let i = 0; i < array.length; i++){
 
-    // if not, create a key of flavor at index i with value 1
-    tableFlavors[splitFlavors[i]] = 1
-  } else{
+    // check if we have a key for this flavor
+    if(!objFlavors[array[i]]){
 
-    //if we already have a key of flavor at index i, increment its value by one
-    tableFlavors[splitFlavors[i]]++
+      // if not, create a key of flavor at index i with value 1
+      objFlavors[array[i]] = 1
+    } else{
+      //if we already have a key of flavor at index i, increment its value by one
+      objFlavors[array[i]]++
+    }
   }
+  return objFlavors
 }
 
 console.log(promptFlavors)
 console.log(splitFlavors)
-console.log(tableFlavors)
+console.log(table.countFlavors(splitFlavors))
