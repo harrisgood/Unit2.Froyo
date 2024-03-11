@@ -13,14 +13,12 @@
 */
 
 
-
 // ask user what flavors they want and store their answer
   // use default answer from assignment
 const promptFlavors = prompt(`What froyo flavors would you like?`, `vanilla,vanilla,vanilla,strawberry,coffee,coffee`)
 
 // create array of flavors without comments
 const splitFlavors = promptFlavors.split(`,`)
-
 
 // function that will turn our split string into a an object counting frequencies
 const countFlavors = (array) => {
@@ -43,6 +41,5 @@ const countFlavors = (array) => {
   return objFlavors
 }
 
-console.log(promptFlavors)
-console.log(splitFlavors)
-console.log(table.countFlavors(splitFlavors))
+// run function on user input flavors. log results in a table in console
+console.table(countFlavors(splitFlavors))
